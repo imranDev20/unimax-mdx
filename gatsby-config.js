@@ -4,26 +4,88 @@
 module.exports = {
   siteMetadata: {
     title: `Unimax Global`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://unimaxglobal.net`,
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+
+    {
+      gatsbyRemarkPlugins: [
+        {
+          options: {
+            maxWidth: 1920,
+          },
+          resolve: "gatsby-remark-images",
+        },
+      ],
+      options: {
+        extensions: [".mdx", ".md", ".markdown"],
+      },
+      resolve: "gatsby-plugin-mdx",
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
     },
-    __key: "pages"
-  }]
+    {
+      options: {
+        defaults: {
+          formats: ["auto", "avif", "webp"],
+          placeholder: "blurred",
+          quality: 70,
+        },
+      },
+      resolve: "gatsby-plugin-sharp",
+    },
+    "gatsby-transformer-sharp",
+    {
+      resolve: "@slixites/gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "dm serif display:400,600",
+          "hanken grotesk:300,400,500,600,700,900",
+        ],
+        display: "swap",
+        preconnect: true,
+        attributes: {
+          rel: "stylesheet preload prefetch",
+          as: "style",
+        },
+      },
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "services",
+        path: "./src/contents/services",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projects",
+        path: "./src/contents/projects",
+      },
+    },
+  ],
 };

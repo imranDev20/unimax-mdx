@@ -87,5 +87,12 @@ module.exports = {
         path: "./src/contents/projects",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "team",
+        path: "./src/contents/team",
+      },
+    },
   ],
 };

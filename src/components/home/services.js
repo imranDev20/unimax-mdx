@@ -1,31 +1,16 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import useServices from "../../hooks/useServices";
 import { theme } from "../global/layout";
+import ServiceCard from "./service-card";
 
-const Services = () => {
-  const data = useStaticQuery(graphql`
-    query HomeServicesQuery {
-      allFile(
-        filter: { sourceInstanceName: { eq: "services" } }
-        sort: { childMdx: { frontmatter: { id: ASC } } }
-      ) {
-        nodes {
-          childMdx {
-            frontmatter {
-              title
-              id
-              image {
-                publicURL
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+const Services = ({ isPage }) => {
+  const data = useServices();
 
   const services = data?.allFile?.nodes;
+
+  console.log(isPage);
 
   return (
     <Container component="section" sx={{ my: 7 }}>
@@ -60,38 +45,7 @@ const Services = () => {
             lg={4}
             xs={12}
           >
-            <Box
-              sx={{
-                backgroundColor: "white",
-                boxShadow: "0px 10px 35px 0px rgba(115, 133, 155, 0.1)",
-                borderRadius: 3,
-                p: 5,
-              }}
-            >
-              <Box
-                sx={{
-                  height: "11rem",
-                }}
-              >
-                <img
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                  src={service.childMdx.frontmatter.image.publicURL}
-                  alt={service.childMdx.frontmatter.title}
-                />
-              </Box>
-
-              <Typography
-                component="h3"
-                variant="h4"
-                sx={{ mt: 4, textAlign: "center" }}
-              >
-                {service.childMdx.frontmatter.title}
-              </Typography>
-            </Box>
+            <ServiceCard service={service} isPage={isPage} />
           </Grid>
         ))}
       </Grid>

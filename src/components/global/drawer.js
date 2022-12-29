@@ -29,6 +29,8 @@ import { theme } from "./layout";
 import Logo from "../../images/logo-unimax-hor.svg";
 import useScrollListener from "../../hooks/useScrollListener";
 import { useState } from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Dropdown from "./dropdown";
 
 const drawerWidth = 240;
 export const navItems = ["Home", "About", "Services", "Contact", "Blog"];
@@ -119,6 +121,11 @@ const DrawerAppBar = (props) => {
     setNavStyles(classObj);
   }, [scroll.y, scroll.lastY]);
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
   return (
     <>
       <HideOnScroll>
@@ -162,28 +169,55 @@ const DrawerAppBar = (props) => {
 
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
                 {navItems.map((item) => (
-                  <Button
-                    key={item}
-                    component={Link}
-                    activeStyle={{ color: theme.palette.secondary.main }}
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : "/" + item.toLowerCase().replaceAll(" ", "-")
-                    }
-                    sx={{
-                      color: "primary.main",
-                      fontWeight: 600,
-                      mx: 1,
-                      "&:hover": {
-                        color: "primary.main",
-                      },
-                    }}
-                  >
-                    {item}
-                  </Button>
+                  <React.Fragment key={item}>
+                    {item === "Services" ? (
+                      <Button
+                        endIcon={<KeyboardArrowDownIcon />}
+                        to={
+                          item === "Home"
+                            ? "/"
+                            : "/" + item.toLowerCase().replaceAll(" ", "-")
+                        }
+                        sx={{
+                          color: "primary.main",
+                          fontWeight: 600,
+                          mx: 1,
+                          "&:hover": {
+                            color: "primary.main",
+                          },
+                        }}
+                        onClick={handleClick}
+                      >
+                        {item}
+                      </Button>
+                    ) : (
+                      <Button
+                        component={Link}
+                        activeStyle={{ color: theme.palette.secondary.main }}
+                        to={
+                          item === "Home"
+                            ? "/"
+                            : "/" + item.toLowerCase().replaceAll(" ", "-")
+                        }
+                        sx={{
+                          color: "primary.main",
+                          fontWeight: 600,
+                          mx: 1,
+                          "&:hover": {
+                            color: "primary.main",
+                          },
+                        }}
+                      >
+                        {item}
+                      </Button>
+                    )}
+                    {item === "Services" ? (
+                      <Dropdown anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+                    ) : null}
+                  </React.Fragment>
                 ))}
               </Box>
+
               <Button
                 variant="blue"
                 color="primary"

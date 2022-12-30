@@ -20,6 +20,7 @@
     "@mdx-js/react": "^2.2.1",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.2",
+    "@sindresorhus/slugify": "^1.1.2",
     "@slixites/gatsby-plugin-google-fonts": "^1.1.1",
     "gatsby": "^5.3.3",
     "gatsby-plugin-image": "^3.3.2",

@@ -10,8 +10,6 @@ const Services = ({ isPage }) => {
 
   const services = data?.allFile?.nodes;
 
-  console.log(isPage);
-
   return (
     <Container component="section" sx={{ my: 7 }}>
       <Typography
@@ -19,7 +17,7 @@ const Services = ({ isPage }) => {
         variant="h3"
         sx={{ color: "primary.main", textAlign: "center" }}
       >
-        Our Specialization
+        {isPage ? "Our Services" : "Our Specialization"}
       </Typography>
       <Typography
         component="p"

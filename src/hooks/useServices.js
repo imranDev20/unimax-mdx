@@ -10,6 +10,7 @@ const useServices = () => {
       ) {
         nodes {
           childMdx {
+            slug
             frontmatter {
               title
               id

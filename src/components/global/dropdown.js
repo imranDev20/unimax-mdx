@@ -44,12 +44,20 @@ export default function Dropdown({ anchorEl, setAnchorEl }) {
         },
       }}
     >
+      <MenuItem
+        sx={{ fontWeight: 600, color: "primary.main" }}
+        component={GatsbyLink}
+        to="/services/"
+      >
+        All Services
+      </MenuItem>
       {services.map((service) => {
         const { id, title } = service.childMdx.frontmatter;
         return (
           <MenuItem
+            sx={{ fontWeight: 600, color: "primary.main" }}
             component={GatsbyLink}
-            to={"/services/" + title.toLowerCase().replaceAll(" ", "-")}
+            to={"/services" + service.childMdx.slug}
             key={id}
           >
             {title}

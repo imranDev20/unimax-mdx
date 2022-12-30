@@ -173,14 +173,11 @@ const DrawerAppBar = (props) => {
                     {item === "Services" ? (
                       <Button
                         endIcon={<KeyboardArrowDownIcon />}
-                        to={
-                          item === "Home"
-                            ? "/"
-                            : "/" + item.toLowerCase().replaceAll(" ", "-")
-                        }
                         sx={{
                           color: "primary.main",
                           fontWeight: 600,
+                          textTransform: "capitalize",
+                          fontSize: 16,
                           mx: 1,
                           "&:hover": {
                             color: "primary.main",
@@ -202,6 +199,8 @@ const DrawerAppBar = (props) => {
                         sx={{
                           color: "primary.main",
                           fontWeight: 600,
+                          fontSize: 16,
+                          textTransform: "capitalize",
                           mx: 1,
                           "&:hover": {
                             color: "primary.main",

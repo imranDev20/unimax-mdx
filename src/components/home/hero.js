@@ -15,7 +15,7 @@ const Hero = () => {
               variant="h2"
               sx={{ color: "primary.main" }}
             >
-              Looking for IT solutions & technology service for your business?
+              Looking for IT Solutions for Your Business?
             </Typography>
             <Typography component="p" sx={{ my: 2, ...theme.typography.body2 }}>
               Unimax Global follows by its principle of building an all-in-one

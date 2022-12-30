@@ -76,7 +76,7 @@ export const theme = createTheme({
     },
 
     border: {
-      main: "#F1F1F1",
+      main: "#EEF4FB",
     },
     text: {
       main: "#515E81",

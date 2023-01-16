@@ -31,9 +31,17 @@ import useScrollListener from "../../hooks/useScrollListener";
 import { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Dropdown from "./dropdown";
+import { useLocation } from "@reach/router";
 
 const drawerWidth = 240;
-export const navItems = ["Home", "About", "Services", "Contact", "Blog"];
+export const navItems = [
+  "Home",
+  "About",
+  "Team",
+  "Services",
+  "Projects",
+  "Contact",
+];
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -76,6 +84,8 @@ const DrawerAppBar = (props) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const location = useLocation();
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -174,13 +184,17 @@ const DrawerAppBar = (props) => {
                       <Button
                         endIcon={<KeyboardArrowDownIcon />}
                         sx={{
-                          color: "primary.main",
+                          color: `${
+                            location.pathname.includes("services")
+                              ? "secondary.main"
+                              : "primary.main"
+                          }`,
                           fontWeight: 600,
                           textTransform: "capitalize",
                           fontSize: 16,
                           mx: 1,
                           "&:hover": {
-                            color: "primary.main",
+                            color: "secondary.main",
                           },
                         }}
                         onClick={handleClick}
@@ -203,7 +217,7 @@ const DrawerAppBar = (props) => {
                           textTransform: "capitalize",
                           mx: 1,
                           "&:hover": {
-                            color: "primary.main",
+                            color: "secondary.main",
                           },
                         }}
                       >

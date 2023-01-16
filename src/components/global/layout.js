@@ -48,7 +48,7 @@ export const theme = createTheme({
     },
     body2: {
       fontSize: 16,
-      lineHeight: 1.8,
+      lineHeight: 1.6,
       letterSpacing: ".3px",
       color: "#002159",
     },
@@ -211,26 +211,6 @@ export const theme = createTheme({
             }),
         },
       ],
-    },
-    MuiInputBase: {
-      styleOverrides: {
-        // Name of the slot
-        root: ({ theme }) =>
-          theme.unstable_sx({
-            borderRadius: "0!important",
-            "&:hover": {
-              borderColor: "primary.main",
-            },
-          }),
-        input: ({ theme }) =>
-          theme.unstable_sx({
-            padding: "9.8px 14px!important",
-
-            "&:hover": {
-              boxShadow: "none",
-            },
-          }),
-      },
     },
   },
 });

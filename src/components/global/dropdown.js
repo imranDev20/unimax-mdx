@@ -45,19 +45,36 @@ export default function Dropdown({ anchorEl, setAnchorEl }) {
       }}
     >
       <MenuItem
-        sx={{ fontWeight: 600, color: "primary.main" }}
+        disableRipple
+        sx={{
+          fontWeight: 600,
+          color: "primary.main",
+          transition: "0.3s all",
+          "&:hover": {
+            color: "secondary.main",
+          },
+        }}
         component={GatsbyLink}
         to="/services/"
       >
         All Services
       </MenuItem>
+      <Divider />
       {services.map((service) => {
         const { id, title } = service.childMdx.frontmatter;
         return (
           <MenuItem
-            sx={{ fontWeight: 600, color: "primary.main" }}
+            disableRipple
+            sx={{
+              fontWeight: 600,
+              color: "primary.main",
+              transition: "0.3s all",
+              "&:hover": {
+                color: "secondary.main",
+              },
+            }}
             component={GatsbyLink}
-            to={"/services" + service.childMdx.slug}
+            to={"/services/" + service.childMdx.slug}
             key={id}
           >
             {title}

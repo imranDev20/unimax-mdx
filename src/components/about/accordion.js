@@ -46,11 +46,11 @@ const Accordion = styled((props) => (
 ))(({ theme }) => ({
   border: `2px solid ${theme.palette.border.main}`,
 
-  "&:first-child": {
+  "&:first-of-type": {
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
-  "&:last-child": {
+  "&:last-of-type": {
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
@@ -105,6 +105,7 @@ export default function FaqAccordion() {
           <Accordion
             expanded={expanded === item.id}
             onChange={handleChange(item.id)}
+            key={index}
           >
             <AccordionSummary
               sx={{

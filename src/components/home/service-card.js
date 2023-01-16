@@ -1,8 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import React from "react";
 import { theme } from "../global/layout";
+import { Link as GatsbyLink } from "gatsby";
 
 const ServiceCard = ({ service, isPage }) => {
+  const { slug } = service?.childMdx;
+  const { title, image } = service?.childMdx?.frontmatter;
+
+  console.log(slug);
+
   return (
     <Box
       sx={{
@@ -23,18 +29,34 @@ const ServiceCard = ({ service, isPage }) => {
             height: "100%",
             objectFit: "contain",
           }}
-          src={service.childMdx.frontmatter.image.publicURL}
-          alt={service.childMdx.frontmatter.title}
+          src={image.publicURL}
+          alt={title}
         />
       </Box>
 
-      <Typography
-        component="h3"
-        variant="h4"
-        sx={{ mt: 4, textAlign: "center" }}
+      <Link
+        to={`/services/${slug}`}
+        component={GatsbyLink}
+        sx={{
+          textDecoration: "none",
+        }}
       >
-        {service.childMdx.frontmatter.title}
-      </Typography>
+        <Typography
+          component="h3"
+          variant="h4"
+          sx={{
+            mt: 4,
+            textAlign: "center",
+            transition: "0.3s color ease",
+            "&:hover": {
+              color: "secondary.main",
+            },
+          }}
+        >
+          {title}
+        </Typography>
+      </Link>
+
       {isPage ? (
         <Typography
           component="p"

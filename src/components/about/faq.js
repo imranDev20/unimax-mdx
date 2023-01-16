@@ -5,8 +5,11 @@ import FaqAccordion from "./accordion";
 
 const Faq = () => {
   return (
-    <Container>
-      <Grid container spacing={0}>
+    <Container sx={{ my: 20 }}>
+      <Grid container spacing={6}>
+        <Grid item md={6}>
+          <FaqAccordion />
+        </Grid>
         <Grid item md={6}>
           <Typography
             component="h2"
@@ -20,17 +23,12 @@ const Faq = () => {
             sx={{
               ...theme.typography.body2,
 
-              maxWidth: 450,
-
               my: 3,
             }}
           >
             Unimax Global takes into consideration every little detail to make
             sure the system runs smoothly and responsively.
           </Typography>
-        </Grid>
-        <Grid item md={6}>
-          <FaqAccordion />
         </Grid>
       </Grid>
     </Container>

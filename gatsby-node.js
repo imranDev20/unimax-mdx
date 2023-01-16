@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/${slugify(node.frontmatter.title)}/`,
+      value: `${slugify(node.frontmatter.title)}/`,
     });
   }
 };
@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       // As mentioned above you could also query something else like frontmatter.title above and use a helper function
       // like slugify to create a slug
-      path: "/services" + node.childMdx.slug,
+      path: "/services/" + node.childMdx.slug,
       component: `${serviceDetails}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
       context: { slug: node.childMdx.slug },
     });

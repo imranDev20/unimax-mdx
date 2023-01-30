@@ -1,10 +1,11 @@
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, Publish } from "@mui/icons-material";
 import {
   Button,
   Checkbox,
   Container,
   FormControl,
   Grid,
+  IconButton,
   InputAdornment,
   InputLabel,
   ListItemText,
@@ -80,7 +81,25 @@ const ContactPage = () => {
         <Grid item md={6}>
           <TextField fullWidth label="Location" variant="outlined" />
         </Grid>
-        <Grid item md={6}></Grid>
+        <Grid item md={6}>
+          <TextField
+            fullWidth
+            tabIndex="-1"
+            label="Click the Upload Icon"
+            InputProps={{
+              disabled: true,
+              endAdornment: (
+                <IconButton
+                  aria-label="upload"
+                  component="label" // THIS IS THE GENIUS CHANGE
+                >
+                  <Publish />
+                  <input hidden type="file" />
+                </IconButton>
+              ),
+            }}
+          />
+        </Grid>
         <Grid item md={12}>
           <TextField label="Message..." multiline rows={4} fullWidth />
         </Grid>

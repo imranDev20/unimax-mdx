@@ -18,20 +18,6 @@ module.exports = {
           },
           resolve: "gatsby-remark-images",
         },
-        {
-          resolve: `gatsby-remark-relative-images`,
-          options: {
-            // [Optional] The root of "media_folder" in your config.yml
-            // Defaults to "static"
-            staticFolderName: "static",
-            // [Optional] Include the following fields, use dot notation for nested fields
-            // All fields are included by default
-            // include: ["featured"],
-            // [Optional] Exclude the following fields, use dot notation for nested fields
-            // No fields are excluded by default
-            // exclude: ["featured.skip"],
-          },
-        },
       ],
       options: {
         extensions: [".mdx", ".md", ".markdown"],
@@ -75,14 +61,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/uploads`,
-        name: "uploads",
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "images",
         path: "./src/images/",
       },
@@ -101,13 +79,6 @@ module.exports = {
       options: {
         name: "services",
         path: "./src/contents/services",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "projects",
-        path: "./src/contents/projects",
       },
     },
     {

@@ -5,7 +5,10 @@ const useServices = () => {
   const data = useStaticQuery(graphql`
     query HomeServicesQuery {
       allFile(
-        filter: { sourceInstanceName: { eq: "services" } }
+        filter: {
+          extension: { eq: "mdx" }
+          sourceInstanceName: { eq: "services" }
+        }
         sort: { childMdx: { frontmatter: { id: ASC } } }
       ) {
         nodes {

@@ -85,7 +85,7 @@ const ContactPage = () => {
           <TextField
             fullWidth
             tabIndex="-1"
-            label="Click the Upload Icon"
+            label="Upload documents or images"
             InputProps={{
               disabled: true,
               endAdornment: (

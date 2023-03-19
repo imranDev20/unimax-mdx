@@ -19,7 +19,11 @@ const Team = () => {
             frontmatter {
               image {
                 childImageSharp {
-                  gatsbyImageData
+                  gatsbyImageData(
+                    height: 400
+                    aspectRatio: 0.8
+                    placeholder: BLURRED
+                  )
                   id
                 }
               }
@@ -64,12 +68,15 @@ const Team = () => {
                     <Typography component="h3" variant="h5" mb={1}>
                       {title}
                     </Typography>
-                    <Typography
-                      component="p"
-                      sx={{ fontSize: 16, color: "secondary.main" }}
-                    >
-                      {position}
-                    </Typography>
+                    {position ? (
+                      <Typography
+                        component="p"
+                        sx={{ fontSize: 16, color: "secondary.main" }}
+                      >
+                        {position}
+                      </Typography>
+                    ) : null}
+
                     <Typography
                       component="p"
                       sx={{ fontSize: 16, color: "secondary.main" }}

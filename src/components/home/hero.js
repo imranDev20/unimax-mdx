@@ -1,4 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Link } from "gatsby";
 import React from "react";
 import { CgArrowLongRight } from "react-icons/cg";
 import HeroImg from "../../images/hero-bg.svg";
@@ -23,7 +24,13 @@ const Hero = () => {
               everything you need to construct an eye-catching online platform
               that follows the trend and falls fight into place.
             </Typography>
-            <Button endIcon={<CgArrowLongRight />} sx={{ mt: 1 }} variant="sky">
+            <Button
+              LinkComponent={Link}
+              to="/contact"
+              endIcon={<CgArrowLongRight />}
+              sx={{ mt: 1 }}
+              variant="sky"
+            >
               Contact
             </Button>
           </Grid>

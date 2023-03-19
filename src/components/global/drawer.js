@@ -22,7 +22,7 @@ import {
   Slide,
   useScrollTrigger,
 } from "@mui/material";
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import { CgArrowLongRight } from "react-icons/cg";
 import { theme } from "./layout";
 // import CustomizedDialogs from "./dialog";
@@ -97,7 +97,7 @@ const DrawerAppBar = (props) => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
-              component={Link}
+              component={GatsbyLink}
               to={item === "Home" ? "/" : item.toLowerCase()}
               sx={{ textAlign: "center" }}
             >
@@ -203,7 +203,7 @@ const DrawerAppBar = (props) => {
                       </Button>
                     ) : (
                       <Button
-                        component={Link}
+                        component={GatsbyLink}
                         activeStyle={{ color: theme.palette.secondary.main }}
                         to={
                           item === "Home"
@@ -232,6 +232,8 @@ const DrawerAppBar = (props) => {
               </Box>
 
               <Button
+                LinkComponent={GatsbyLink}
+                to="/contact"
                 variant="blue"
                 color="primary"
                 sx={{ ml: 2 }}

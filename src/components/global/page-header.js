@@ -4,7 +4,7 @@ import { theme } from "./layout";
 
 const PageHeader = ({ name, desc }) => {
   return (
-    <Box sx={{ mt: 5, mb: 15, textAlign: "center" }}>
+    <Box sx={{ mt: 5, mb: 5, textAlign: "center" }}>
       <Typography sx={{ mb: 2 }} component="h1" variant="h3">
         {name}
       </Typography>

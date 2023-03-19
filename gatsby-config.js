@@ -2,6 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  trailingSlash: "never",
   siteMetadata: {
     title: `Unimax Global`,
     siteUrl: `https://unimaxglobal.net`,
@@ -86,6 +87,13 @@ module.exports = {
       options: {
         name: "team",
         path: "./src/contents/team",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projects",
+        path: "./src/contents/projects",
       },
     },
   ],

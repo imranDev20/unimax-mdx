@@ -35,9 +35,10 @@ const Process = () => {
           my: 3,
         }}
       >
-        Find out how following a structured website design process can help you
-        deliver more successful websites faster and more efficiently. Try Unimax
-        Global today.
+        At Unimax Global, we believe in a streamlined and collaborative approach
+        to ensure the success of your projects. Our working process is designed
+        to provide transparency, efficiency, and exceptional results. Here's an
+        overview of our typical working process:
       </Typography>
       <GatsbyImage image={image} alt="Unimax Working Process" />
     </Container>

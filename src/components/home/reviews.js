@@ -36,7 +36,30 @@ const labels = {
 };
 
 const Reviews = () => {
-  const value = 3.5;
+  const value = 4.5;
+
+  const testimonials = [
+    {
+      id: 1,
+      text: "Unimax Global has been instrumental in transforming our online presence. Their expertise in web development and digital marketing helped us achieve higher visibility and drive significant traffic to our website. Their professionalism, attention to detail, and timely delivery are commendable. We highly recommend their services.",
+      name: "Farhad Kabir",
+      address: "20-22 Wenlock Road, London, England, N1 7GU",
+    },
+
+    {
+      id: 2,
+      text: "Working with Unimax Global has been a game-changer for our business. Their team's exceptional skills in content writing and SEO strategies have helped us rank higher in search results, resulting in increased organic traffic and conversions. Their proactive approach and excellent communication make them a pleasure to work with.",
+      name: "Parmindar Singh",
+      address: "173 Camberwell Rd, London SE5 0HB, United Kingdom",
+    },
+    {
+      id: 3,
+      text: "Unimax Global exceeded our expectations with their top-notch Android app development services. The app they created for our business not only looks stunning but also functions seamlessly, providing an intuitive user experience. Their team's technical expertise, professionalism, and commitment to quality are unmatched.",
+      name: "Kamal Ahmed",
+      address:
+        "Unit 46D, Micro Business Park, 46-50 Greatorex Street, London E1 5NP",
+    },
+  ];
 
   return (
     <Container>
@@ -47,27 +70,46 @@ const Reviews = () => {
       >
         Some of Our Testimonials
       </Typography>
+
+      <Typography
+        component="p"
+        sx={{
+          ...theme.typography.body2,
+          textAlign: "center",
+          maxWidth: 950,
+          mx: "auto",
+          my: 3,
+        }}
+      >
+        Real clients, real experiences. Read what our clients have to say about
+        their journey with Unimax Global. From website development to digital
+        marketing, our services have made a significant impact on their
+        businesses. Discover how we've helped businesses like yours achieve
+        digital success.
+      </Typography>
+
       <CarouselProvider
         totalSlides={3}
         style={{
           position: "relative",
         }}
       >
-        <Slider moveThreshold={0.3}>
-          {["first", "second", "third"].map((item, index) => {
+        <Slider moveThreshold={0.3} style={{ paddingBottom: 30 }}>
+          {testimonials.map((item, index) => {
             return (
               <Slide
                 index={0}
                 style={{
                   minHeight: "300px",
-                  px: 10,
+                  paddingLeft: 10,
+                  paddingRight: 10,
                 }}
               >
                 <Card
                   elevation={0}
                   sx={{
                     boxShadow: "0px 10px 35px 0px rgba(115, 133, 155, 0.1)",
-                    backgroundColor: "white",
+                    backgroundColor: "background.main",
                     maxWidth: 650,
                     mx: "auto",
                     p: 3,
@@ -82,11 +124,7 @@ const Reviews = () => {
                       mx: "auto",
                     }}
                   >
-                    In publishing and graphic design, Lorem ipsum is a
-                    placeholder text commonly used to demonstrate the visual
-                    form of a document or a typeface without relying on
-                    meaningful content. Lorem ipsum may be used as a placeholder
-                    before final copy is available.
+                    {item.text}
                   </Typography>
 
                   <Box
@@ -119,7 +157,7 @@ const Reviews = () => {
                       fontSize: 20,
                     }}
                   >
-                    Richard Blake
+                    {item.name}
                   </Typography>
                   <Typography
                     sx={{
@@ -130,7 +168,7 @@ const Reviews = () => {
                       mx: "auto",
                     }}
                   >
-                    Casula Mall, New South Wales
+                    {item.address}
                   </Typography>
                 </Card>
               </Slide>
@@ -140,6 +178,7 @@ const Reviews = () => {
 
         <Box
           sx={{
+            mt: 3,
             "& .carousel__dot": {
               backgroundColor: "transparent",
               border: "1px solid",

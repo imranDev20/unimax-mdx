@@ -52,8 +52,9 @@ const Projects = () => {
         Projects We have Undertaken
       </Typography>
       <Box sx={{ width: "100%" }}>
-        <Box sx={{ mb: 5 }}>
+        <Box sx={{ mb: 5, width: "100%" }}>
           <Tabs
+            variant="scrollable"
             sx={{
               "& .MuiTabs-indicator": {
                 height: "100%",
@@ -61,7 +62,7 @@ const Projects = () => {
                 zIndex: -10,
               },
               "& .MuiTabs-flexContainer": {
-                justifyContent: "center",
+                justifyContent: { xs: "unset", md: "center" },
               },
 
               "& .MuiButtonBase-root": {
@@ -93,10 +94,10 @@ const Projects = () => {
           <ProjectsType filter="wordpress" />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          Item Four
+          Coming Soon...
         </TabPanel>
         <TabPanel value={value} index={4}>
-          Item Five
+          Coming Soon...
         </TabPanel>
       </Box>
     </Container>

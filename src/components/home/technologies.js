@@ -46,14 +46,15 @@ const Technologies = () => {
           my: 3,
         }}
       >
-        We use the best industrial-level technologies for all our projects and
-        management to ensure the best quality of our work. Our team constantly
-        researches about new tools and incorporates the best ones in our line of
-        work.
+        Explore the cutting-edge technologies harnessed by Unimax Global. Our
+        team of experts leverages the latest tools, frameworks, and platforms to
+        deliver innovative and robust solutions for your digital needs. Stay
+        ahead of the curve and discover the technological possibilities that can
+        propel your business to new heights.
       </Typography>
       <Grid container rowSpacing={5} columnSpacing={5} mt={0}>
         {techs.map((item) => (
-          <Grid key={item.id} item md={2} mb={7}>
+          <Grid key={item.id} item xs={6} md={4} lg={3} mb={7}>
             <Box
               sx={{
                 display: "flex",

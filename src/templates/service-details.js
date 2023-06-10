@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { Link } from "gatsby";
 import PageHeader from "../components/global/page-header";
 import Layout, { theme } from "../components/global/layout";
@@ -8,13 +7,9 @@ import MuiBreadCrumbs from "../components/global/mui-breadcrumb";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 
-const shortcodes = { Link, Grid }; // Provide common components here
-
 export default function ServiceDetails({ data, children }) {
   const { title, stepSection, upperSection, image, detailedSections } =
     data?.mdx?.frontmatter;
-
-  console.log(data.mdx.body);
 
   return (
     <Layout>
@@ -34,6 +29,7 @@ export default function ServiceDetails({ data, children }) {
         />
         {detailedSections.map((section, index) => (
           <Sections
+            key={index}
             title={section.title}
             body={section.body}
             img={section.image.publicURL}
@@ -47,6 +43,17 @@ export default function ServiceDetails({ data, children }) {
   );
 }
 
+export const Head = ({ data }) => {
+  const { title, description } = data.mdx.frontmatter.metaContent;
+
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+    </>
+  );
+};
+
 export const query = graphql`
   query ($slug: String!) {
     mdx(slug: { eq: $slug }) {
@@ -55,6 +62,10 @@ export const query = graphql`
         title
         image {
           publicURL
+        }
+        metaContent {
+          description
+          title
         }
         stepSection {
           desc
@@ -116,7 +127,7 @@ function Sections({ title, body, img, points, index, sx, ...props }) {
         {points?.length > 0 ? (
           <Grid container spacing={4} sx={{ mt: 1 }}>
             {points.map((item, index) => (
-              <Grid item sm={6}>
+              <Grid item sm={6} key={index}>
                 <Box
                   sx={{
                     backgroundColor: "secondary.main",
@@ -151,12 +162,12 @@ function Steps({ title, desc, steps }) {
   return (
     <>
       <Grid container mt={10}>
-        <Grid item sm={6}>
+        <Grid item md={6}>
           <Typography component="h3" variant="h4">
             {title}
           </Typography>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item md={6}>
           <Typography component="p" sx={{ ...theme.typography.body2 }}>
             {desc}
           </Typography>
@@ -166,7 +177,7 @@ function Steps({ title, desc, steps }) {
       <Grid container mt={3} spacing={5}>
         {steps?.length > 0
           ? steps?.map((step, index) => (
-              <Grid item sm={4}>
+              <Grid item md={4} key={index}>
                 <Box
                   sx={{
                     backgroundColor: "white",

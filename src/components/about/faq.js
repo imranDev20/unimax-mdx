@@ -6,7 +6,11 @@ import FaqAccordion from "./accordion";
 const Faq = () => {
   return (
     <Container sx={{ my: 20 }}>
-      <Grid container spacing={6}>
+      <Grid
+        container
+        spacing={6}
+        direction={{ xs: "column-reverse", md: "row" }}
+      >
         <Grid item md={6}>
           <FaqAccordion />
         </Grid>
@@ -26,8 +30,10 @@ const Faq = () => {
               my: 3,
             }}
           >
-            Unimax Global takes into consideration every little detail to make
-            sure the system runs smoothly and responsively.
+            Find answers to common inquiries about Unimax Global and our IT
+            services. Browse through these frequently asked questions to gain
+            insights and clarity on our offerings, processes, and how we can
+            help your business thrive in the digital realm.
           </Typography>
         </Grid>
       </Grid>

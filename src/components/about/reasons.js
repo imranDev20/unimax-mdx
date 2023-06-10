@@ -29,16 +29,20 @@ const Reasons = () => {
               fontWeight: 600,
             }}
           >
-            Reach out to the world’s most reliable IT services.
+            Embrace reliable IT services that empower your digital journey.
           </Typography>
           <Typography sx={{ ...theme.typography.body2, mb: 3 }}>
-            The IT services that Unimax Global are running can be segmented by
-            the type of skills employed to deliver the service (design, build,
-            run).
+            We pride ourselves on being a trusted partner for all your digital
+            needs. With our wealth of industry experience, we bring a deep
+            understanding of the IT landscape and a team of seasoned
+            professionals dedicated to delivering top-notch solutions.
           </Typography>
           <Typography sx={{ ...theme.typography.body2, mb: 3 }}>
-            Technically, these fall into three main categories: business process
-            services, application services, and infrastructure services.
+            What sets us apart is our commitment to tailoring our services to
+            your specific business goals, ensuring a perfect fit every time. We
+            believe in delivering exceptional quality, going above and beyond to
+            exceed your expectations. Choose Unimax Global and unlock the full
+            potential of your digital presence.
           </Typography>
         </Grid>
         <Grid item sm={6}>

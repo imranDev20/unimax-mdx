@@ -47,6 +47,7 @@ const ProjectsType = ({ filter }) => {
       .filter((item) => item.childMdx.frontmatter.category === filter)
       .map((item) => item);
   }
+
   return (
     <>
       {filteredProjects?.length > 0 ? (

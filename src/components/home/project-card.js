@@ -11,7 +11,7 @@ const ProjectCard = ({ project, index }) => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: isEven ? "row-reverse" : "row",
+        flexDirection: { lg: isEven ? "row-reverse" : "row", xs: "column" },
         position: "relative",
         mb: 5,
       }}
@@ -21,7 +21,7 @@ const ProjectCard = ({ project, index }) => {
         href={url}
         target="_blank"
         sx={{
-          width: "65%",
+          width: { xs: "100%", lg: "65%" },
           position: "relative",
           "&::before": {
             content: "''",
@@ -56,12 +56,12 @@ const ProjectCard = ({ project, index }) => {
 
       <Box
         sx={{
-          width: "60%",
+          width: { xs: "100%", lg: "60%" },
           height: "75%",
           backgroundColor: "white",
-          position: "absolute",
+          position: { xs: "static", lg: "absolute" },
           top: "50%",
-          transform: "translateY(-50%)",
+          transform: { lg: "translateY(-50%)", xs: "unset" },
           right: isEven ? "unset" : "7%",
           left: isEven ? "7%" : "unset",
           boxShadow: "0px 10px 35px 0px rgba(115, 133, 155, 0.1)",

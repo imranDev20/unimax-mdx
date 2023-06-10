@@ -14,3 +14,9 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
+
+export const Head = () => (
+  <>
+    <title>Our Services | Comprehensive IT Solutions for Businesses</title>
+  </>
+);

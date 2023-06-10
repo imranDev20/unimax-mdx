@@ -24,4 +24,14 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home</title>;
+export const Head = () => (
+  <>
+    <title>
+      Unimax Global | Transforming Businesses with Innovative IT Solutions
+    </title>
+    <meta
+      name="description"
+      content="Unimax Global is a leading IT solutions provider, specializing in innovative web development, digital marketing, and app development services. We empower businesses with tailored solutions to drive digital transformation and achieve online success. Discover how we can elevate your digital presence today."
+    />
+  </>
+);

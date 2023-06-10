@@ -39,7 +39,7 @@ export const navItems = [
   "About",
   "Team",
   "Services",
-  "Projects",
+  // "Projects",
   "Contact",
 ];
 
@@ -76,7 +76,6 @@ function HideOnScroll(props) {
 }
 
 const DrawerAppBar = (props) => {
-  const [dialogOpen, setDialogOpen] = React.useState(false);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [navStyles, setNavStyles] = useState({});
@@ -98,7 +97,7 @@ const DrawerAppBar = (props) => {
           <ListItem key={item} disablePadding>
             <ListItemButton
               component={GatsbyLink}
-              to={item === "Home" ? "/" : item.toLowerCase()}
+              to={item === "Home" ? "/" : "/" + item.toLowerCase()}
               sx={{ textAlign: "center" }}
             >
               <ListItemText primary={item} />
@@ -159,25 +158,25 @@ const DrawerAppBar = (props) => {
                 alignItems: "center",
               }}
             >
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "block" },
+                }}
+              >
+                <img src={Logo} style={{ width: "160px" }} alt="" />
+              </Box>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                sx={{ mr: 2, display: { lg: "none" }, color: "primary.main" }}
               >
                 <MenuIcon />
               </IconButton>
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                <img src={Logo} style={{ width: "160px" }} alt="" />
-              </Box>
 
-              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <Box sx={{ display: { xs: "none", lg: "block" } }}>
                 {navItems.map((item) => (
                   <React.Fragment key={item}>
                     {item === "Services" ? (
@@ -236,7 +235,7 @@ const DrawerAppBar = (props) => {
                 to="/contact"
                 variant="blue"
                 color="primary"
-                sx={{ ml: 2 }}
+                sx={{ ml: 2, display: { xs: "none", lg: "flex" } }}
                 // onClick={() => setDialogOpen(true)}
                 endIcon={<CgArrowLongRight />}
               >
@@ -256,7 +255,7 @@ const DrawerAppBar = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

@@ -12,44 +12,44 @@ const Features = () => {
   const features = [
     {
       id: 1,
-      name: "Big Experience",
+      name: "Extensive Industry Experience",
       details:
-        "Many years of work in this field is an excellent indicator that companies trust us and in response we offer unique solutions.",
+        "With years of experience in the IT industry, we bring a wealth of knowledge and expertise to every project, ensuring top-notch solutions for our clients.",
       icon: ExperienceIcon,
     },
     {
       id: 2,
-      name: "Strong Team",
+      name: "Skilled Team of Professionals",
       details:
-        "An excellent team of professionals will help you to bring all your ideas to life in the best possible way and with flexible functionality.",
+        "Our team comprises highly skilled and dedicated professionals who excel in their respective fields, delivering exceptional results and surpassing client expectations.",
       icon: TeamIcon,
     },
     {
       id: 3,
-      name: "Personal Solutions",
+      name: "Proven Track Record",
       details:
-        "Individual approach to your project. flexible solutions for your tasks to achieve your goals on the path to success.",
+        "We have a strong track record of successfully completing numerous projects across various industries, earning the trust and satisfaction of our clients.",
       icon: SolutionIcon,
     },
     {
       id: 4,
-      name: "Unlimited Revision",
+      name: "Client-Centric Approach",
       details:
-        "Unlike other WordPress agencies, from start to finish we never limit your revisions for your website design project. We believe our clients need to fully visualize their digital experiences as many times as they need.",
+        "We prioritize understanding our clients' unique requirements and business goals, tailoring our solutions to meet their specific needs and delivering personalized experiences.",
       icon: RevisionIcon,
     },
     {
       id: 5,
-      name: "Secure Payment",
+      name: "Cutting-edge Technology Stack",
       details:
-        "Back up your database secure your payment, store in a safe and secure place while still maintaining its accessibility.",
+        "We leverage the latest tools, technologies, and frameworks in our development processes, ensuring that our clients benefit from the most innovative and efficient solutions.",
       icon: SecureIcon,
     },
     {
       id: 6,
-      name: "24x7 Service",
+      name: "Commitment to Quality",
       details:
-        "We have given services twenty-four hours a day feasible and practical plans for successfully transform businesses based on their needs.",
+        "We maintain stringent quality standards throughout our processes, conducting rigorous testing and quality assurance to deliver reliable, high-performance solutions.",
       icon: TwentySevenFourIcon,
     },
   ];

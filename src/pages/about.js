@@ -13,7 +13,8 @@ const AboutPage = () => {
       <MuiBreadCrumbs name={name} />
       <PageHeader
         name={name}
-        desc="We Ensure Quality & Best Service Website Design, Development & Graphic Design."
+        desc="
+        Unlock your digital potential with us. We specialize in innovative IT solutions, including web development, digital marketing, and app development. Partner with our skilled team to embark on a journey of digital transformation and achieve business success."
       />
       <AboutUnimax />
       <Reasons />
@@ -24,4 +25,10 @@ const AboutPage = () => {
 
 export default AboutPage;
 
-export const Head = () => <title>About</title>;
+export const Head = () => (
+  <>
+    <title>
+      About Unimax Global | Empowering Digital Success for Businesses
+    </title>
+  </>
+);

@@ -165,10 +165,13 @@ const Footer = () => {
                 <Link
                   key={item.id}
                   component={GatsbyLink}
-                  to={item.title
-                    .toLowerCase()
-                    .replace(/ /g, "-")
-                    .replace(/[^\w-]+/g, "")}
+                  to={
+                    "/" +
+                    item.title
+                      .toLowerCase()
+                      .replace(/ /g, "-")
+                      .replace(/[^\w-]+/g, "")
+                  }
                   sx={{
                     display: "block",
                     my: 1,

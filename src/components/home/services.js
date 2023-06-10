@@ -11,7 +11,7 @@ const Services = ({ isPage }) => {
   const services = data?.allFile?.nodes;
 
   return (
-    <Container component="section" sx={{ my: 7 }}>
+    <Container component="section" sx={{ my: 7, mt: { xs: 20, lg: 7 } }}>
       <Typography
         component="h2"
         variant="h3"
@@ -24,14 +24,20 @@ const Services = ({ isPage }) => {
         sx={{
           ...theme.typography.body2,
           textAlign: "center",
-          maxWidth: 800,
+          maxWidth: 950,
           mx: "auto",
           my: 3,
         }}
       >
-        We specialize in terms of developing data-driven web applications that
-        automate business processes, manage information, and help you create a
-        notable online presence in a secure network.
+        Discover the comprehensive range of IT services offered by Unimax
+        Global. Our dedicated teams of experts specialize in various domains,
+        bringing a wealth of knowledge and experience to each service we
+        provide. From dynamic web development to captivating content writing,
+        strategic SEO solutions to impactful digital marketing campaigns, and
+        innovative Android app development to tailored WordPress websites, our
+        services are tailored to meet your unique business needs. Explore our
+        service offerings and unlock the full potential of your digital presence
+        with Unimax Global.
       </Typography>
 
       <Grid container spacing={4} mt={3}>

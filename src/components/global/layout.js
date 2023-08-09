@@ -5,6 +5,7 @@ import { CssBaseline } from "@mui/material";
 // import Footer from "./footer";
 import DrawerAppBar from "./drawer";
 import Footer from "./footer";
+import { Script } from "gatsby";
 
 export const theme = createTheme({
   typography: {
@@ -219,6 +220,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Script src="https://www.google.com/recaptcha/api.js" async defer />
       <DrawerAppBar>{children}</DrawerAppBar>
       <Footer />
     </ThemeProvider>

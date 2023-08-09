@@ -17,11 +17,16 @@ import Layout from "../components/global/layout";
 import MuiBreadCrumbs from "../components/global/mui-breadcrumb";
 import PageHeader from "../components/global/page-header";
 import useServices from "../hooks/useServices";
+import { ValidationError, useForm } from "@formspree/react";
 
 const name = "Contact Us";
 const ContactPage = () => {
   const [serviceName, setServiceName] = React.useState([]);
   const data = useServices();
+
+  const [state, handleSubmit] = useForm(`${process.env.GATSBY_FORMSPREE_ID}`);
+
+  console.log(state);
 
   const handleChange = (event) => {
     const {
@@ -45,13 +50,30 @@ const ContactPage = () => {
         desc="Get in touch with the Unimax Global team today. Whether you have questions about our services, need assistance with a project, or want to explore how we can help your business succeed in the digital landscape, we are here to support you. Our dedicated team is ready to provide personalized solutions and address your inquiries promptly."
       />
 
-      <Grid container sx={{ mx: "auto", maxWidth: 700, px: 2 }} rowSpacing={3}>
+      <Grid
+        container
+        sx={{ mx: "auto", maxWidth: 700, px: 2 }}
+        rowSpacing={3}
+        component="form"
+        onSubmit={handleSubmit}
+      >
         <Grid container item sm={12} spacing={3}>
           <Grid item sm={6} xs={12}>
-            <TextField fullWidth label="Name" variant="outlined" />
+            <TextField fullWidth label="Name" variant="outlined" name="name" />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </Grid>
           <Grid item sm={6} xs={12}>
-            <TextField fullWidth label="Phone" variant="outlined" />
+            <TextField
+              fullWidth
+              label="Phone"
+              variant="outlined"
+              name="phone"
+            />
+            <ValidationError
+              prefix="Phone"
+              field="phone"
+              errors={state.errors}
+            />
           </Grid>
         </Grid>
 
@@ -62,6 +84,7 @@ const ContactPage = () => {
                 Services
               </InputLabel>
               <Select
+                name="services"
                 multiple
                 value={serviceName}
                 onChange={handleChange}
@@ -69,25 +92,53 @@ const ContactPage = () => {
                 input={<OutlinedInput label="Services" />}
               >
                 {services.map((service) => (
-                  <MenuItem value={service}>
+                  <MenuItem value={service} key={service}>
                     <Checkbox checked={serviceName.indexOf(service) > -1} />
                     <ListItemText primary={service} />
                   </MenuItem>
                 ))}
               </Select>
             </FormControl>
+
+            <ValidationError
+              prefix="Services"
+              field="services"
+              errors={state.errors}
+            />
           </Grid>
           <Grid item sm={6} xs={12}>
-            <TextField fullWidth label="Email" variant="outlined" />
+            <TextField
+              fullWidth
+              label="Email"
+              variant="outlined"
+              name="email"
+            />
+
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </Grid>
         </Grid>
 
         <Grid container item sm={12} spacing={3}>
           <Grid item sm={6} xs={12}>
-            <TextField fullWidth label="Location" variant="outlined" />
+            <TextField
+              fullWidth
+              label="Location"
+              variant="outlined"
+              name="location"
+            />
+            <ValidationError
+              prefix="Location"
+              field="location"
+              errors={state.errors}
+            />
           </Grid>
           <Grid item sm={6} xs={12}>
             <TextField
+              name="file"
               fullWidth
               tabIndex="-1"
               label="Upload documents or images"
@@ -104,14 +155,32 @@ const ContactPage = () => {
                 ),
               }}
             />
+            <ValidationError prefix="File" field="file" errors={state.errors} />
           </Grid>
         </Grid>
 
         <Grid item sm={12} xs={12}>
-          <TextField label="Message..." multiline rows={4} fullWidth />
+          <TextField
+            label="Message..."
+            multiline
+            rows={4}
+            fullWidth
+            name="message"
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
         </Grid>
+
+        <div
+          className="g-recaptcha"
+          data-sitekey={`${process.env.GATSBY_RECAPTCHA_SITE_KEY}`}
+        ></div>
+
         <Grid item sm={12} xs={12}>
-          <Button fullWidth variant="blue">
+          <Button type="sumbit" fullWidth variant="blue">
             Submit
           </Button>
         </Grid>

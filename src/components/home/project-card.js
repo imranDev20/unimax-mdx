@@ -1,4 +1,6 @@
-import { alpha, Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import useTheme from "@mui/material/styles/useTheme";
+import { alpha } from "@mui/system/colorManipulator";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 
@@ -92,9 +94,7 @@ const ProjectCard = ({ project, index }) => {
           fontSize={16}
           sx={{ color: "primary.main", textAlign: "justify" }}
         >
-          {description.length > 300
-            ? description.substring(0, 300) + "..."
-            : description}
+          {description}
         </Typography>
       </Box>
     </Box>

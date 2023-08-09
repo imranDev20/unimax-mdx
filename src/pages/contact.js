@@ -1,12 +1,10 @@
-import { AccountCircle, Publish } from "@mui/icons-material";
+import { Publish } from "@mui/icons-material";
 import {
   Button,
   Checkbox,
-  Container,
   FormControl,
   Grid,
   IconButton,
-  InputAdornment,
   InputLabel,
   ListItemText,
   MenuItem,
@@ -44,7 +42,7 @@ const ContactPage = () => {
       <MuiBreadCrumbs name={name} />
       <PageHeader
         name={name}
-        desc="Get in touch with the Unimax Global team today. Whether you have questions about our services, need assistance with a project, or want to explore how we can help your business succeed in the digital landscape, we are here to support you. Our dedicated team is ready to provide personalized solutions and address your inquiries promptly. "
+        desc="Get in touch with the Unimax Global team today. Whether you have questions about our services, need assistance with a project, or want to explore how we can help your business succeed in the digital landscape, we are here to support you. Our dedicated team is ready to provide personalized solutions and address your inquiries promptly."
       />
 
       <Grid container sx={{ mx: "auto", maxWidth: 700, px: 2 }} rowSpacing={3}>

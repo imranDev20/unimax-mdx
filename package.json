@@ -39,5 +39,9 @@
     "react-icons": "^4.7.1",
     "react-intersection-observer": "^9.4.1",
     "react-markdown": "^8.0.4"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-imports": "^2.0.0",
+    "eslint-config-react-app": "^7.0.1"
   }
 }

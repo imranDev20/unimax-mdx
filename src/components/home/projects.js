@@ -78,7 +78,7 @@ const Projects = () => {
             aria-label="basic tabs example"
           >
             <Tab disableRipple label="All Projects" />
-            <Tab disableRipple label="Applications" />
+            <Tab disableRipple label="Web Application" />
             <Tab disableRipple label="WordPress" />
             <Tab disableRipple label="Logo" />
             <Tab disableRipple label="UI/UX" />

@@ -71,3 +71,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  // https://material-ui.com/guides/minimizing-bundle-size/
+  actions.setBabelPlugin({
+    name: "babel-plugin-transform-imports",
+    options: {
+      "@mui/material": {
+        transform: "@mui/material/${member}",
+        preventFullImport: true,
+      },
+      "@mui/icons-material": {
+        // Use "transform: '@material-ui/icons/${member}'," if your bundler does not support ES modules
+        transform: "@mui/icons-material/${member}",
+        preventFullImport: true,
+      },
+    },
+  });
+};

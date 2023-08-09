@@ -19,7 +19,6 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
-import { graphql, useStaticQuery } from "gatsby";
 import { Link as GatsbyLink } from "gatsby";
 import useServices from "../../hooks/useServices";
 

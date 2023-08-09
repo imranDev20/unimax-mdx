@@ -66,14 +66,14 @@ const TeamPage = () => {
                     <Typography component="h3" variant="h5" mb={1}>
                       {title}
                     </Typography>
-                    {position ? (
+                    {/* {position ? (
                       <Typography
                         component="p"
                         sx={{ fontSize: 16, color: "secondary.main" }}
                       >
                         {position}
                       </Typography>
-                    ) : null}
+                    ) : null} */}
 
                     <Typography
                       component="p"

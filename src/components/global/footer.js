@@ -211,7 +211,7 @@ const Footer = () => {
                 </Typography>
               </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center", my: 0.5 }}>
+              <Box sx={{ display: "flex", alignItems: "center", my: 0.2 }}>
                 <Box
                   sx={{
                     display: "block",
@@ -241,7 +241,40 @@ const Footer = () => {
                 </Link>
               </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center", my: 0.5 }}>
+              <Box sx={{ display: "flex", alignItems: "center", my: 0.2 }}>
+                <Box
+                  sx={{
+                    display: "block",
+                    width: 30,
+                    mr: 1,
+                    mt: 1,
+                    fontSize: 20,
+                    color: "secondary.main",
+                  }}
+                >
+                  <FaPhoneAlt />
+                </Box>
+                <Link
+                  component="a"
+                  href="tel:+966561025377"
+                  sx={{
+                    display: "block",
+                    my: 1,
+                    textDecoration: "none",
+                    transition: "0.2s color ease",
+                    "&:hover": {
+                      color: "secondary.main",
+                    },
+                  }}
+                >
+                  <Box>
+                    <Box>+966 56 102 5377 </Box>
+                    <Box>(Riyadh Representative)</Box>
+                  </Box>
+                </Link>
+              </Box>
+
+              <Box sx={{ display: "flex", alignItems: "center", my: 0.2 }}>
                 <Box
                   sx={{
                     display: "block",
@@ -271,7 +304,7 @@ const Footer = () => {
                 </Link>
               </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center", my: 0.5 }}>
+              <Box sx={{ display: "flex", alignItems: "center", my: 0.2 }}>
                 <Box
                   sx={{
                     display: "block",

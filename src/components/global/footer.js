@@ -48,8 +48,8 @@ const Footer = () => {
               />
             </Box>
             <Typography component="p" sx={{ ...theme.typography.body2 }}>
-              Provide a full range of IT Services and Solutions to businesses
-              and industry leaders, both large and small.
+              Delivering comprehensive IT services and solutions to businesses
+              of all sizes, from startups to enterprises
             </Typography>
             <Stack sx={{ mt: 2 }} spacing={2} direction="row">
               <Link
@@ -116,7 +116,7 @@ const Footer = () => {
                     color: "white",
                   },
                 }}
-                href="https://web.facebook.com/unimaxglobal.bd"
+                href="https://www.linkedin.com/company/unimax-global/"
                 target="_blank"
               >
                 <FaLinkedinIn />

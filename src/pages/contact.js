@@ -12,21 +12,19 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/global/layout";
 import MuiBreadCrumbs from "../components/global/mui-breadcrumb";
 import PageHeader from "../components/global/page-header";
 import useServices from "../hooks/useServices";
-import { ValidationError, useForm } from "@formspree/react";
+import axios from "axios";
 
 const name = "Contact Us";
 const ContactPage = () => {
-  const [serviceName, setServiceName] = React.useState([]);
+  const [serviceName, setServiceName] = useState([]);
   const data = useServices();
 
-  const [state, handleSubmit] = useForm(`${process.env.GATSBY_FORMSPREE_ID}`);
-
-  console.log(state);
+  // const [state, handleSubmit] = useForm(`${process.env.GATSBY_FORMSPREE_ID}`);
 
   const handleChange = (event) => {
     const {
@@ -41,6 +39,12 @@ const ContactPage = () => {
   const services = data?.allFile?.nodes.map(
     (item) => item.childMdx.frontmatter.title
   );
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post("/api/email", { hello: "hi" });
+    console.log(response);
+  };
 
   return (
     <Layout>
@@ -60,7 +64,6 @@ const ContactPage = () => {
         <Grid container item sm={12} spacing={3}>
           <Grid item sm={6} xs={12}>
             <TextField fullWidth label="Name" variant="outlined" name="name" />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </Grid>
           <Grid item sm={6} xs={12}>
             <TextField
@@ -68,11 +71,6 @@ const ContactPage = () => {
               label="Phone"
               variant="outlined"
               name="phone"
-            />
-            <ValidationError
-              prefix="Phone"
-              field="phone"
-              errors={state.errors}
             />
           </Grid>
         </Grid>
@@ -99,12 +97,6 @@ const ContactPage = () => {
                 ))}
               </Select>
             </FormControl>
-
-            <ValidationError
-              prefix="Services"
-              field="services"
-              errors={state.errors}
-            />
           </Grid>
           <Grid item sm={6} xs={12}>
             <TextField
@@ -112,12 +104,6 @@ const ContactPage = () => {
               label="Email"
               variant="outlined"
               name="email"
-            />
-
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
             />
           </Grid>
         </Grid>
@@ -129,11 +115,6 @@ const ContactPage = () => {
               label="Location"
               variant="outlined"
               name="location"
-            />
-            <ValidationError
-              prefix="Location"
-              field="location"
-              errors={state.errors}
             />
           </Grid>
           <Grid item sm={6} xs={12}>
@@ -155,7 +136,6 @@ const ContactPage = () => {
                 ),
               }}
             />
-            <ValidationError prefix="File" field="file" errors={state.errors} />
           </Grid>
         </Grid>
 
@@ -167,17 +147,12 @@ const ContactPage = () => {
             fullWidth
             name="message"
           />
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
         </Grid>
 
-        <div
+        {/* <div
           className="g-recaptcha"
           data-sitekey={`${process.env.GATSBY_RECAPTCHA_SITE_KEY}`}
-        ></div>
+        ></div> */}
 
         <Grid item sm={12} xs={12}>
           <Button type="sumbit" fullWidth variant="blue">

@@ -1,13 +1,13 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { theme } from "../global/layout";
 import ReasonsCounter from "./reasons-counter";
 
 const reasons = [
-  { id: 1, text: "Skilled Team Members", number: 15, symbol: "+" },
-  { id: 2, text: "Satisfied Customers", number: 115, symbol: "+" },
-  { id: 3, text: "Successfull Projects", number: 65, symbol: "+" },
-  { id: 4, text: "Years of Experience", number: 5, symbol: "+" },
+  { id: 1, text: "Skilled Team Members", number: 8, symbol: "+" },
+  { id: 2, text: "Satisfied Customers", number: 10, symbol: "+" },
+  { id: 3, text: "Successfull Projects", number: 15, symbol: "+" },
+  { id: 4, text: "Years of Experience", number: 3, symbol: "+" },
 ];
 
 const Reasons = () => {

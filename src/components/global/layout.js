@@ -223,6 +223,25 @@ const Layout = ({ children }) => {
       <Script src="https://www.google.com/recaptcha/api.js" async defer />
       <DrawerAppBar>{children}</DrawerAppBar>
       <Footer />
+
+      <Script
+        async
+        defer
+        id="unimax-tawk"
+        dangerouslySetInnerHTML={{
+          __html: `if(typeof window !== "undefined" && typeof document !== "undefined"){
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/64fc7c14a91e863a5c129163/1h9t49ckj';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+          }`,
+        }}
+      />
     </ThemeProvider>
   );
 };
